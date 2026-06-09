@@ -2,34 +2,34 @@
 
 Este projeto implementa uma API de gerenciamento de livros utilizando FastAPI, com integração ao Redis para cache, visando melhorar o desempenho das requisições.
 
- Tecnologias utilizadas
-Python 3.13
-FastAPI
-Redis
-Docker 
-Funcionalidades
-Criar livros
-Listar livros
-Atualizar livros
-Deletar livros
-Cache com Redis no endpoint de listagem (/listar)
-Uso do Redis (Cache)
+ Tecnologias utilizadas  
+Python 3.13  
+FastAPI  
+Redis  
+Docker   
+Funcionalidades  
+Criar livros  
+Listar livros  
+Atualizar livros  
+Deletar livros  
+Cache com Redis no endpoint de listagem (/listar)  
+Uso do Redis (Cache)  
 
-A API utiliza o Redis para armazenar temporariamente a lista de livros.
+A API utiliza o Redis para armazenar temporariamente a lista de livros.  
 
-Estratégia utilizada: Cache Aside
-A API verifica se os dados estão no Redis
-Se estiverem → retorna diretamente do cache
-Se não → busca da lista em memória e salva no Redis
-Qualquer alteração (POST, PUT, DELETE) remove o cache
-📁 Estrutura do projeto
-.
-├── main.py
-├── Dockerfile
-├── docker-compose.yml
-├── deployment.yaml
-├── service.yaml
-└── README.md
+Estratégia utilizada: Cache Aside  
+A API verifica se os dados estão no Redis  
+Se estiverem → retorna diretamente do cache  
+Se não → busca da lista em memória e salva no Redis  
+Qualquer alteração (POST, PUT, DELETE) remove o cache  
+📁 Estrutura do projeto  
+.  
+├── main.py  
+├── Dockerfile  
+├── docker-compose.yml  
+├── deployment.yaml  
+├── service.yaml  
+└── README.md  
 
 🐳 Executando com Docker
 1. Subir os containers
