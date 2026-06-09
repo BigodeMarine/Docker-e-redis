@@ -110,3 +110,13 @@ Um livro é deletado (DELETE)
 salvar_livros_redis:Responsável por armazenar a lista de livros no Redis com TTL.
 
 deletar_livros_redis:Responsável por remover os dados do Redis quando houver alterações.
+
+## CI/CD com GitHub Actions    
+
+O projeto utiliza também GitHub Actions para integração contínua.  
+
+A cada push na branch principal:  
+
+- Instala as dependências com Poetry  
+- Executa os testes automatizados com Pytest  
+- Valida a integridade da aplicação  
