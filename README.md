@@ -7,7 +7,7 @@ Python 3.13
 FastAPI
 Redis
 Docker 
- Funcionalidades
+Funcionalidades
 Criar livros
 Listar livros
 Atualizar livros
