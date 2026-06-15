@@ -92,6 +92,8 @@ O projeto utiliza também GitHub Actions para integração contínua.
 
 A cada push na branch principal:  
 
-- Instala as dependências com Poetry  
-- Executa os testes automatizados com Pytest  
-- Valida a integridade da aplicação  
+- Checkout do código  
+- Instalação das dependências com Poetry  
+- Execução dos testes com Pytest  
+- Construção da imagem Docker da aplicação  
+- Validação da execução do container  
