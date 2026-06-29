@@ -10,6 +10,7 @@ Este projeto implementa uma API de gerenciamento de livros utilizando FastAPI, c
 - Poetry
 - Pytest
 - GitHub Actions
+- ELK Stack
   
 ## Funcionalidades
 
@@ -18,6 +19,16 @@ Este projeto implementa uma API de gerenciamento de livros utilizando FastAPI, c
 - Atualizar livros
 - Deletar livros
 - Cache com Redis no endpoint `/listar`
+
+## Observabilidade com ELK Stack
+
+A aplicação pode enviar logs para o Elasticsearch através do Logstash.
+
+Fluxo:
+
+FastAPI → Logstash → Elasticsearch → Kibana
+
+O Logstash realiza o parsing dos logs, o Elasticsearch armazena os dados e o Kibana permite a visualização e análise.
 
 ## Executando com Docker
 
@@ -97,3 +108,18 @@ A cada push na branch principal:
 - Execução dos testes com Pytest  
 - Construção da imagem Docker da aplicação  
 - Validação da execução do container  
+
+## 📊 Integração do ELK Stack no projeto  
+
+- **FastAPI:** gera logs da aplicação em formato JSON.
+- **Logstash:** realiza a leitura dos logs, faz o parsing e envia os dados para o Elasticsearch.
+- **Elasticsearch:** armazena e indexa os logs para consultas rápidas.
+- **Kibana:** permite visualizar e analisar os logs através de uma interface web.  
+
+### Benefícios da integração  
+
+- Centralização dos logs da aplicação.
+- Monitoramento em tempo real.
+- Facilidade na identificação de erros.
+- Análise de desempenho da aplicação.
+- Suporte à observabilidade em ambientes containerizados.

@@ -5,6 +5,15 @@ import asyncio
 import redis
 import json
 import os
+import logging
+
+logging.basicConfig(
+    filename="logs/app.log",
+    level=logging.INFO,
+    format='{"timestamp":"%(asctime)s","level":"%(levelname)s","message":"%(message)s"}'
+)
+
+logging.info("Aplicação iniciada")
 
 # FastAPI
 app = FastAPI()
@@ -50,11 +59,11 @@ async def listar_livros():
     cache = redis_client.get("livros")
 
     if cache:
-        print("📦 Dados vindo do CACHE")
+        logging.info("Dados vindo do CACHE")
         return json.loads(cache)
 
     # se não tiver cache, pega do "banco"
-    print("🐢 Dados vindo da LISTA")
+    logging.info("Dados vindo da LISTA")
 
     # salva no Redis
     await salvar_livros_redis(livros)
